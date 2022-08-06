@@ -17,17 +17,17 @@ let pages = ref(
 </script>
 <template>
 	<div id="app" class="font-sans antialiased text-black leading-tight">
-		<div class="flex flex-col h-screen bg-grey-light">
-			<div class="bg-navy-darker px-6 py-4 relative"></div>
-			<div class="flex flex-1">
-				<div class="flex flex-col bg-white flex-none overflow-hidden border-r-2 border-grey-light w-full lg:max-w-xs max-h-screen">
-					<ol class="list-reset overflow-y-auto pb-12">
-						<li class="bg-white" v-for="page in pages">
+		<div class="flex flex-col h-screen">
+			<div class="bg-indigo-800 px-6 py-4 relative"></div>
+			<div class="flex flex-1 bg-gray-50">
+				<div class="flex flex-col flex-none overflow-hidden border-r-2 w-64 lg:max-w-xs max-h-screen">
+					<ol class="list-reset overflow-y-auto">
+						<li v-for="page in pages">
 							<Link :href="route(page.link)"
-									   class="flex justify-between items-baseline no-underline py-4 px-4 hover:bg-blue-300"
+									   class="flex justify-between items-baseline no-underline p-2 hover:bg-blue-300"
 							>
 								<div class="flex items-baseline text-sm mr-4 relative">
-									<span class="pl-8 text-grey-darker">{{ page.title }}</span>
+									<span class="pl-2 text-gray-800">{{ page.title }}</span>
 								</div>
 							</Link>
 						</li>
