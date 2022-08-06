@@ -1,14 +1,41 @@
 <script setup>
+let apiUrl = '/users'
+let fields = [
+	{
+		name: 'id',
+		title: 'ID',
+	},
+	{
+		name: 'name',
+		title: 'Name',
+	},
+	{
+		name: 'email',
+		title: 'Email',
+		titleClass: 'text-center text-red-600 bg-gray-400'
+	},
+	{
+		name: 'nickname',
+		title: 'Nickname',
+	},
+	{
+		name: 'birthdate',
+		title: 'Birthdate'
+	}
+]
 </script>
 
 <template>
-	<div>
-		<div class="bg-grey-darker p-8">
-			<div class="max-w-sm mx-auto">
-				HELLO!!!
-				<!--					<user-settings-form></user-settings-form>-->
-			</div>
-		</div>
-		<!--			<nuxt-content :document="postInMarkdown"/>-->
+	<h2 class="font-bold text-xl">Simple</h2>
+	<ol>
+		<li>apiUrl</li>
+		<li>fields</li>
+		<li>override tableHeaderClass</li>
+	</ol>
+	<div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+		<vue-datatable :api-url="apiUrl"
+					   :fields="fields"
+					   :styles="{tableHeaderClass: 'bg-blue-400'}"
+		/>
 	</div>
 </template>

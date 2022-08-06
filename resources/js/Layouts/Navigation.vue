@@ -4,7 +4,7 @@ import {Link} from "@inertiajs/inertia-vue3"
 let pages = [
 	{
 		link: '01',
-		title: 'Basic'
+		title: 'Simple'
 	},
 	{
 		link: '02',
