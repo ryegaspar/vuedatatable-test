@@ -8,7 +8,7 @@ let pages = [
 	},
 	{
 		link: '02',
-		title: 'Advance'
+		title: 'with Sorted Headers'
 	},
 ]
 
@@ -24,6 +24,7 @@ let pages = [
 						<li v-for="page in pages">
 							<Link :href="route(page.link)"
 								  class="flex justify-between items-baseline no-underline p-2 hover:bg-blue-300"
+								  :class="{'bg-blue-200': $page.component === page.link}"
 							>
 								<div class="flex items-baseline text-sm mr-4 relative">
 									<span class="pl-2 text-gray-800">{{ page.title }}</span>
