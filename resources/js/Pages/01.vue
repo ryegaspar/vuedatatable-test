@@ -19,8 +19,7 @@ let fields = [
 		title: 'Nickname',
 	},
 	{
-		name: 'birthdate',
-		title: 'Birthdate'
+		name: 'birthDate',
 	}
 ]
 </script>
@@ -30,6 +29,7 @@ let fields = [
 	<ol>
 		<li>apiUrl</li>
 		<li>fields</li>
+		<li>fields without title will create a title (Birth Date)</li>
 		<li>override tableHeaderClass</li>
 	</ol>
 	<div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">

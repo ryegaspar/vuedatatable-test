@@ -25,12 +25,11 @@ let fields = [
 		title: 'Birthdate'
 	}
 ]
-let sortOrder = [
-	{
-		field: 'email',
-		direction: 'asc'
-	}
-]
+let sortOrder = {
+	field: 'email',
+	direction: 'desc'
+}
+
 </script>
 
 <template>
