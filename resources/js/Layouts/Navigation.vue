@@ -10,6 +10,10 @@ let pages = [
 		link: '02',
 		title: 'with Sorted Headers'
 	},
+	{
+		link: '03',
+		title: 'custom options'
+	},
 ]
 
 </script>

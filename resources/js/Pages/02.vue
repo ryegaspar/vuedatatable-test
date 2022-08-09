@@ -33,7 +33,7 @@ let sortOrder = {
 </script>
 
 <template>
-	<h2 class="font-bold text-xl">with Sorted Headers</h2>
+	<h2 class="font-bold text-xl">with sorted headers</h2>
 	<ol>
 		<li>sortable headers</li>
 		<li>sort icons</li>

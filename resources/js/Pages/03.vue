@@ -4,6 +4,7 @@ let fields = [
 	{
 		name: 'id',
 		title: 'ID',
+		sortField: 'id'
 	},
 	{
 		name: 'name',
@@ -12,30 +13,36 @@ let fields = [
 	{
 		name: 'email',
 		title: 'Email',
-		titleClass: 'text-center text-red-600 bg-gray-400'
+		titleClass: 'text-center',
+		sortField: 'email'
 	},
 	{
 		name: 'nickname',
 		title: 'Nickname',
 	},
 	{
-		name: 'birthDate',
+		name: 'birthdate',
+		title: 'Birthdate'
 	}
 ]
+let sortOrder = {
+	field: 'email',
+	direction: 'desc'
+}
+
 </script>
 
 <template>
-	<h2 class="font-bold text-xl">simple</h2>
+	<h2 class="font-bold text-xl">custom options</h2>
 	<ol>
-		<li>apiUrl</li>
-		<li>fields</li>
-		<li>fields without title will create a title (Birth Date)</li>
-		<li>override tableHeaderClass</li>
+		<li>hidden sort icons</li>
+		<li>append params = someParam: true</li>
 	</ol>
 	<div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
 		<vue-datatable :api-url="apiUrl"
 					   :fields="fields"
-					   :styles="{tableHeaderClass: 'bg-blue-400'}"
+					   :sortOrder="sortOrder"
+					   :options="{showSortIcons: false, appendParams: {someParam: true}}"
 		/>
 	</div>
 </template>
