@@ -14,6 +14,10 @@ let pages = [
 		link: '03',
 		title: 'custom options'
 	},
+	{
+		link: '04',
+		title: 'loading animation'
+	}
 ]
 
 </script>

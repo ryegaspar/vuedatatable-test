@@ -12,6 +12,10 @@ class UserController extends Controller
 	{
 		$users = new User;
 
+		if ($request->has('delay')) {
+			sleep(3);
+		}
+
 		if ($request->sort) {
 			$sort = explode(',', $request->sort);
 
