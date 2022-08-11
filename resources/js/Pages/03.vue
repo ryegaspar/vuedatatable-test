@@ -35,14 +35,15 @@ let sortOrder = {
 <template>
 	<h2 class="font-bold text-xl">custom options</h2>
 	<ol>
-		<li>hidden sort icons</li>
+		<li>hide sort icons</li>
 		<li>append params = someParam: true</li>
+		<li>hide loading</li>
 	</ol>
 	<div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
 		<vue-datatable :api-url="apiUrl"
 					   :fields="fields"
 					   :sortOrder="sortOrder"
-					   :options="{showSortIcons: false, appendParams: {someParam: true}}"
+					   :options="{showLoading: false, showSortIcons: false, appendParams: {someParam: true}}"
 		/>
 	</div>
 </template>
