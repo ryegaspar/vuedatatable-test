@@ -5,26 +5,18 @@ namespace App\Http\Controllers;
 use App\Http\Resources\UserResource;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Spatie\QueryBuilder\QueryBuilder;
 
 class UserController extends Controller
 {
 	public function __invoke(Request $request)
 	{
-		$users = new User;
-
 		if ($request->has('delay')) {
-			sleep(3);
+			sleep(1);
 		}
 
-		if ($request->sort) {
-			$sort = explode(',', $request->sort);
-
-			foreach ($sort as $item) {
-				list ($sortCol, $sortDir) = explode('|', $item);
-				$sortDir = $sortDir ?? 'asc';
-				$users = $users->orderBy($sortCol, $sortDir);
-			}
-		}
+		$users = QueryBuilder::for(User::class)
+			->allowedSorts('email', 'id');
 
 		return UserResource::collection($users->paginate($request->perPage));
 	}
