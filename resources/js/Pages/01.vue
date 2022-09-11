@@ -19,7 +19,8 @@ let fields = [
 		title: 'Nickname',
 	},
 	{
-		name: 'birthDate',
+		name: 'birthdate',
+		title: 'Birthdate'
 	}
 ]
 </script>

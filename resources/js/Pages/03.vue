@@ -43,7 +43,7 @@ let sortOrder = {
 		<vue-datatable :api-url="apiUrl"
 					   :fields="fields"
 					   :sortOrder="sortOrder"
-					   :options="{showLoading: false, showSortIcons: false, appendParams: {someParam: true}}"
+					   :options="{showLoading: false, showSortIcons: false, appendParams: {someParam: true}, silent: true}"
 		/>
 	</div>
 </template>

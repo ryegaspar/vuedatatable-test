@@ -29,8 +29,8 @@ Route::get('/03', fn() => Inertia::render('03'))
 Route::get('/04', fn() => Inertia::render('04'))
 	->name('04');
 
-Route::get('/05', fn() => Inertia::render('05'))
-	->name('05');
+//Route::get('/05', fn() => Inertia::render('05'))
+//	->name('05');
 //
 //Route::get('/dashboard', function () {
 //    return Inertia::render('Dashboard');
