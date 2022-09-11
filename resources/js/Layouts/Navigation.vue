@@ -17,6 +17,10 @@ let pages = [
 	{
 		link: '04',
 		title: 'loading animation'
+	},
+	{
+		link: '05',
+		title: 'modify options'
 	}
 ]
 
