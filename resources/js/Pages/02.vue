@@ -45,4 +45,11 @@ let sortOrder = {
 					   :options="{showLoading: false}"
 		/>
 	</div>
+
+	<div class="mt-2 py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+		<vue-datatable :api-url="apiUrl"
+					   :fields="fields"
+					   :sortOrder="sortOrder"
+		/>
+	</div>
 </template>
