@@ -1,5 +1,5 @@
 <script setup>
-let apiUrl = '/users?delay'
+let apiUrl = '/users'
 let fields = [
 	{
 		name: 'id',
@@ -69,7 +69,6 @@ let fields2 = [
 	<div class="mt-5 py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
 		<vue-datatable api-url=""
 					   :fields="fields2"
-					   :options="{showLoading: false, showSortIcons: false, appendParams: {someParam: true}, silent: true}"
 		/>
 	</div>
 </template>
