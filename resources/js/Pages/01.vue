@@ -23,7 +23,6 @@ const fields = [
 		title: 'Birthdate'
 	}
 ]
-
 const fields2 = [
 	{
 		name: 'id',
@@ -46,6 +45,10 @@ const fields2 = [
 		title: 'Birthdate'
 	}
 ]
+const sortOrder = {
+	field: 'email',
+	direction: 'desc'
+}
 </script>
 
 <template>
@@ -60,6 +63,7 @@ const fields2 = [
 		<vue-datatable :api-url="apiUrl"
 					   :fields="fields"
 					   :styles="{tableHeaderClass: 'bg-blue-400'}"
+					   :sortOrder="sortOrder"
 		/>
 	</div>
 
