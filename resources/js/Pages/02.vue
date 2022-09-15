@@ -42,7 +42,6 @@ let sortOrder = {
 		<vue-datatable :api-url="apiUrl"
 					   :fields="fields"
 					   :sortOrder="sortOrder"
-					   :options="{showLoading: false}"
 		/>
 	</div>
 
@@ -50,6 +49,7 @@ let sortOrder = {
 		<vue-datatable :api-url="apiUrl"
 					   :fields="fields"
 					   :sortOrder="sortOrder"
+					   :options="{showSortIcons: false}"
 		/>
 	</div>
 </template>
