@@ -107,8 +107,8 @@ const defaultCss = {
 				</tbody>
 			</table>
 		</div>
-		<div class="mt-3 flex justify-between text-sm">
-			<div class="py-2">
+		<nav class="mt-3 flex justify-between text-sm">
+			<div class="py-2 text-gray-200">
 				Displaying 1 to 10 of 49 items
 			</div>
 			<ul class="flex items-center rounded-md bg-gray-50 text-gray-800">
@@ -161,6 +161,20 @@ const defaultCss = {
 					</button>
 				</li>
 			</ul>
-		</div>
+		</nav>
+		<nav class="mt-3 flex justify-between text-sm"
+			 aria-label="Pagination">
+			<div class="py-2 text-gray-200">
+				Displaying 1 to 10 of 49 items
+			</div>
+			<div class="flex flex-1 justify-end">
+				<button class="items-center rounded-md bg-gray-50 px-3 py-2 text-gray-800 hover:bg-gray-300">
+					Previous
+				</button>
+				<button class="items-center rounded-md bg-gray-50 px-3 py-2 text-gray-800 hover:bg-gray-300 ml-3">
+					Next
+				</button>
+			</div>
+		</nav>
 	</div>
 </template>
