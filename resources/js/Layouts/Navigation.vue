@@ -18,6 +18,10 @@ let pages = [
 		link: '04',
 		title: 'loading animation'
 	},
+	{
+		link: '05',
+		title: 'not a vuedatatable'
+	}
 ]
 
 </script>
