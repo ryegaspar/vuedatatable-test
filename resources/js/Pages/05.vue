@@ -30,7 +30,7 @@ const defaultCss = {
 </script>
 
 <template>
-	<div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+	<div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
 		<div :class="defaultCss.tableWrapperClass">
 			<table :class="defaultCss.tableClass">
 				<thead :class="defaultCss.tableHeaderClass">
@@ -113,8 +113,7 @@ const defaultCss = {
 			</div>
 			<ul class="flex items-center rounded-md bg-gray-50 text-gray-800">
 				<li>
-					<button class="inline-flex items-center rounded-l-md p-2 focus:outline-none cursor-not-allowed text-gray-300 hover:bg-gray-50"
-					>
+					<button class="inline-flex cursor-not-allowed items-center rounded-l-md p-2 text-gray-300 hover:bg-gray-50 focus:outline-none">
 						<svg class="h-5 w-5"
 							 xmlns="http://www.w3.org/2000/svg"
 							 viewBox="0 0 20 20"
@@ -145,7 +144,7 @@ const defaultCss = {
 				</li>
 
 				<li>
-					<button class="inline-flex items-center rounded-r-md p-2 focus:outline-none hover:bg-gray-300">
+					<button class="inline-flex items-center rounded-r-md p-2 hover:bg-gray-300 focus:outline-none">
 						<svg class="h-5 w-5"
 							 xmlns="http://www.w3.org/2000/svg"
 							 viewBox="0 0 20 20"
@@ -163,7 +162,8 @@ const defaultCss = {
 			</ul>
 		</nav>
 		<nav class="mt-3 flex justify-between text-sm"
-			 aria-label="Pagination">
+			 aria-label="Pagination"
+		>
 			<div class="py-2 text-gray-200">
 				Displaying 1 to 10 of 49 items
 			</div>
@@ -171,7 +171,7 @@ const defaultCss = {
 				<button class="items-center rounded-md bg-gray-50 px-3 py-2 text-gray-800 hover:bg-gray-300">
 					Previous
 				</button>
-				<button class="items-center rounded-md bg-gray-50 px-3 py-2 text-gray-800 hover:bg-gray-300 ml-3">
+				<button class="ml-3 items-center rounded-md bg-gray-50 px-3 py-2 text-gray-800 hover:bg-gray-300">
 					Next
 				</button>
 			</div>
