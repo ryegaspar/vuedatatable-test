@@ -1,5 +1,5 @@
 <script setup>
-import {Link} from "@inertiajs/inertia-vue3"
+import { Link } from '@inertiajs/inertia-vue3'
 
 let pages = [
 	{
@@ -27,18 +27,22 @@ let pages = [
 </script>
 
 <template>
-	<div id="app" class="font-sans antialiased text-gray-200 leading-tight">
-		<div class="flex flex-col h-screen">
-			<div class="bg-indigo-800 px-6 py-4 relative"></div>
-			<div class="flex flex-1 bg-gray-50 bg-slate-900">
-				<div class="flex flex-col flex-none overflow-hidden border-r-2 w-64 lg:max-w-xs max-h-screen">
-					<ol class="list-reset overflow-y-auto mt-4">
-						<li v-for="page in pages">
+	<div id="app"
+		 class="font-sans leading-tight text-gray-200 antialiased"
+	>
+		<div class="flex h-screen flex-col">
+			<div class="relative bg-indigo-800 px-6 py-4"></div>
+			<div class="flex flex-1 bg-slate-900">
+				<div class="hidden max-h-screen w-64 flex-none flex-col overflow-hidden border-r-2 lg:flex lg:max-w-xs">
+					<ol class="list-reset mt-4 overflow-y-auto">
+						<li v-for="(page, index) in pages"
+							:key="index"
+						>
 							<Link :href="route(page.link)"
-								  class="flex justify-between items-baseline no-underline p-2 hover:bg-blue-300"
+								  class="flex items-baseline justify-between p-2 no-underline hover:bg-blue-300"
 								  :class="{'bg-slate-700': $page.component === page.link}"
 							>
-								<div class="flex items-baseline text-sm mr-4 relative">
+								<div class="relative mr-4 flex items-baseline text-sm">
 									<span class="pl-2">{{ page.title }}</span>
 								</div>
 							</Link>
@@ -46,7 +50,7 @@ let pages = [
 					</ol>
 				</div>
 
-				<div class="flex-grow bg-slate-900 overflow-y-auto px-6 py-12 lg:block max-h-screen">
+				<div class="max-h-screen grow overflow-y-auto bg-slate-900 px-6 py-12 lg:block">
 					<slot></slot>
 				</div>
 			</div>
