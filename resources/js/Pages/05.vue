@@ -31,12 +31,12 @@ const defaultCss = {
 
 <template>
 	<div>
-		<div class="-mx-6 overflow-hidden text-sm shadow sm:-mx-6 md:mx-0 md:rounded-lg"><!-- tableWrapperClass -->
+		<div class="-mx-6 text-sm shadow sm:-mx-6 md:mx-0 md:rounded-lg lg:overflow-hidden"><!-- tableWrapperClass -->
 			<table class="min-w-full divide-y divide-gray-300"><!-- tableClass-->
 				<thead class="bg-gray-800 text-gray-100"><!-- tableHeaderClass -->
 				<tr>
 					<!-- tableHeaderCellClass, tableHeaderClassSortable -->
-					<th class="px-4 py-3.5 text-left uppercase hover:cursor-pointer">
+					<th class="hidden px-4 py-3.5 text-left uppercase hover:cursor-pointer lg:table-cell">
 						ID<span class="vuedatatable-sort-neutral"></span><!-- sortNeutralClass -->
 					</th>
 					<!-- tableHeaderCellClass -->
@@ -48,64 +48,107 @@ const defaultCss = {
 						Email
 					</th>
 					<!-- tableHeaderCellClass -->
-					<th class="px-4 py-3.5 text-left uppercase">
+					<th class="hidden px-4 py-3.5 text-left uppercase lg:table-cell">
 						Nickname
 					</th>
 					<!-- tableHeaderCellClass -->
-					<th class="px-4 py-3.5 text-left uppercase">
+					<th class="hidden px-4 py-3.5 text-left uppercase sm:table-cell">
+						Position
+					</th>
+					<!-- tableHeaderCellClass -->
+					<th class="hidden px-4 py-3.5 text-left uppercase sm:table-cell">
 						Birthdate
 					</th>
 				</tr>
 				</thead>
 				<tbody class="text-gray-800"><!-- tableBodyClass -->
 				<tr class="bg-gray-50 even:bg-gray-300"><!-- tableRowClass -->
-					<td class="p-3 text-sm"><!-- tableDataClass -->
+					<td class="hidden p-3 align-top text-sm lg:table-cell"><!-- tableDataClass (p-3 text-sm align-top)-->
 						1
 					</td>
-					<td class="p-3 text-sm"><!-- tableDataClass -->
+					<td class="p-3 align-top text-sm"><!-- tableDataClass -->
 						Devyn Toy DDS
+						<dl class="lg:hidden">
+							<dt class="sr-only">Nickname</dt>
+							<dd>Kacey</dd>
+							<dt class="sr-only sm:hidden">Birthdate</dt>
+							<dd class="sm:hidden">2013-05-20</dd>
+						</dl>
 					</td>
-					<td class="p-3 text-sm"><!-- tableDataClass -->
+					<td class="p-3 align-top text-sm"><!-- tableDataClass -->
 						zzboncak@example.net
+						<dl class="sm:hidden">
+							<dt class="sr-only sm:hidden">Position</dt>
+							<dd class="sm:hidden">Manager</dd>
+						</dl>
 					</td>
-					<td class="p-3 text-sm"><!-- tableDataClass -->
+					<td class="hidden p-3 align-top text-sm lg:table-cell"><!-- *tableDataClass -->
 						Kacey
 					</td>
-					<td class="p-3 text-sm"><!-- tableDataClass -->
+					<td class="hidden p-3 align-top text-sm sm:table-cell"><!-- *tableDataClass -->
+						Manager
+					</td>
+					<td class="hidden p-3 align-top text-sm sm:table-cell"><!-- *tableDataClass -->
 						2013-05-20
 					</td>
 				</tr>
 				<tr class="bg-gray-50 even:bg-gray-300"><!-- tableRowClass -->
-					<td class="p-3 text-sm"><!-- tableDataClass -->
+					<td class="hidden p-3 align-top text-sm lg:table-cell"><!-- tableDataClass -->
 						2
 					</td>
-					<td class="p-3 text-sm"><!-- tableDataClass -->
+					<td class="p-3 align-top text-sm"><!-- tableDataClass -->
 						Mrs. Earline Kessler
+						<dl class="lg:hidden">
+							<dt class="sr-only">Nickname</dt>
+							<dd>Metcha</dd>
+							<dt class="sr-only sm:hidden">Birthdate</dt>
+							<dd class="sm:hidden">2007-05-20</dd>
+						</dl>
 					</td>
-					<td class="p-3 text-sm"><!-- tableDataClass -->
+					<td class="p-3 align-top text-sm"><!-- tableDataClass -->
 						aabonjak@example.com
+						<dl class="sm:hidden">
+							<dt class="sr-only sm:hidden">Position</dt>
+							<dd class="sm:hidden">Assistant to the Regional Manager</dd>
+						</dl>
 					</td>
-					<td class="p-3 text-sm"><!-- tableDataClass -->
+					<td class="hidden p-3 align-top text-sm lg:table-cell"><!-- tableDataClass -->
 						Metcha
 					</td>
-					<td class="p-3 text-sm"><!-- tableDataClass -->
+					<td class="hidden p-3 align-top text-sm sm:table-cell"><!-- tableDataClass -->
+						Assistant to the Regional Manager
+					</td>
+					<td class="hidden p-3 align-top text-sm sm:table-cell"><!-- tableDataClass -->
 						2007-05-20
 					</td>
 				</tr>
 				<tr class="bg-gray-50 even:bg-gray-300"><!-- tableRowClass -->
-					<td class="p-3 text-sm"><!-- tableDataClass -->
+					<td class="hidden p-3 align-top text-sm lg:table-cell"><!-- tableDataClass -->
 						3
 					</td>
-					<td class="p-3 text-sm"><!-- tableDataClass -->
+					<td class="p-3 align-top text-sm"><!-- tableDataClass -->
 						Vanezz Lee
+						<dl class="lg:hidden">
+							<dt class="sr-only">Nickname</dt>
+							<dd>Gene</dd>
+							<dt class="sr-only sm:hidden">Birthdate</dt>
+							<dd class="sm:hidden">2005-08-31</dd>
+						</dl>
 					</td>
-					<td class="p-3 text-sm"><!-- tableDataClass -->
+					<td class="p-3 align-top text-sm"><!-- tableDataClass -->
 						yurimasu@masudk.com
+						<dl class="sm:hidden">
+							<dt class="sr-only sm:hidden">Position</dt>
+							<dd class="sm:hidden">Dunder Mifflin Salesman</dd>
+						</dl>
 					</td>
-					<td class="p-3 text-sm"><!-- tableDataClass -->
+					<td class="hidden p-3 align-top text-sm lg:table-cell"><!-- tableDataClass -->
 						Gene
 					</td>
-					<td class="p-3 text-sm"><!-- tableDataClass -->
+					<td class="hidden p-3 align-top text-sm sm:table-cell"><!-- tableDataClass -->
+						Dunder Mifflin Salesman
+					</td>
+					<td class="hidden p-3 align-top text-sm sm:table-cell"><!-- tableDataClass -->
 						2005-08-31
 					</td>
 				</tr>
