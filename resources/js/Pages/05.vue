@@ -159,7 +159,7 @@ const defaultCss = {
 			<div class="hidden py-2 text-gray-200 sm:flex">
 				Displaying 1 to 10 of 49 items
 			</div>
-			<ul class="mx-auto flex justify-between space-x-2 rounded-md bg-gray-50 text-gray-800 sm:mx-0 sm:w-auto">
+			<ul class="mx-auto flex justify-between rounded-md bg-gray-50 text-gray-800 sm:mx-0 sm:w-auto">
 				<li>
 					<button class="cursor-not-allowed items-center rounded-l-md p-2 text-gray-300 hover:bg-gray-50 focus:outline-none">
 						<svg class="h-5 w-5"
@@ -182,7 +182,7 @@ const defaultCss = {
 				</li>
 
 				<li>
-					<button class="relative z-10 cursor-not-allowed items-center bg-indigo-50 px-3 py-2 text-indigo-600 outline outline-indigo-500 hover:z-20">
+					<button class="z-10 cursor-not-allowed items-center bg-indigo-50 px-3 py-2 text-indigo-600 outline outline-indigo-500 hover:z-20">
 						2
 					</button>
 				</li>
