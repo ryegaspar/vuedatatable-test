@@ -176,13 +176,13 @@ const defaultCss = {
 				</li>
 			</ul>
 		</nav>
-		<nav class="mt-3 flex justify-between text-sm"
+		<nav class="-mx-4 mt-3 flex justify-between text-sm sm:mx-0"
 			 aria-label="Pagination"
 		>
-			<div class="py-2 text-gray-200">
+			<div class="hidden py-2 text-gray-200 sm:flex">
 				Displaying 1 to 10 of 49 items
 			</div>
-			<div class="flex flex-1 justify-end">
+			<div class="flex flex-1 justify-between sm:justify-end">
 				<button class="items-center rounded-md bg-gray-50 px-3 py-2 text-gray-800 hover:bg-gray-300">
 					Previous
 				</button>
