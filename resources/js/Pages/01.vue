@@ -19,6 +19,10 @@ const fields = [
 		title: 'Nickname',
 	},
 	{
+		name: 'status',
+		title: 'Status'
+	},
+	{
 		name: 'birthdate',
 		title: 'Birthdate',
 		titleClass: 'text-right',
