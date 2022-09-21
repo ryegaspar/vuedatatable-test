@@ -1,4 +1,6 @@
 <script setup>
+import format from 'date-fns/format'
+
 const apiUrl = '/users'
 const fields = [
 	{
@@ -26,7 +28,10 @@ const fields = [
 		name: 'birthdate',
 		title: 'Birthdate',
 		titleClass: 'text-right',
-		dataClass: 'text-xs font-bold text-right'
+		dataClass: 'text-xs font-bold text-right',
+		callback: function (value) {
+			return format(new Date(value), 'MMM dd yyyy')
+		}
 	}
 ]
 const fields2 = [

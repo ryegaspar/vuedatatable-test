@@ -1,4 +1,6 @@
 <script setup>
+import format from 'date-fns/format'
+
 let apiUrl = '/users?delay'
 let fields = [
 	{
@@ -22,7 +24,10 @@ let fields = [
 	},
 	{
 		name: 'birthdate',
-		title: 'Birthdate'
+		title: 'Birthdate',
+		callback: function (value) {
+			return format(new Date(value), 'MMM dd yyyy')
+		}
 	}
 ]
 let sortOrder = {
@@ -33,11 +38,11 @@ let sortOrder = {
 </script>
 
 <template>
-	<h2 class="font-bold text-xl">custom options</h2>
+	<h2 class="text-xl font-bold">custom options</h2>
 	<ol>
 		<li>table loading animation</li>
 	</ol>
-	<div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+	<div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
 		<vue-datatable :api-url="apiUrl"
 					   :fields="fields"
 					   :sortOrder="sortOrder"
