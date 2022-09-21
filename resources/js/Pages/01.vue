@@ -20,7 +20,9 @@ const fields = [
 	},
 	{
 		name: 'birthdate',
-		title: 'Birthdate'
+		title: 'Birthdate',
+		titleClass: 'text-right',
+		dataClass: 'text-xs font-bold text-right'
 	}
 ]
 const fields2 = [
@@ -66,6 +68,7 @@ const sortOrder = {
 		<li>fields</li>
 		<li>fields without title will create a title (Birth Date)</li>
 		<li>override tableHeaderClass</li>
+		<li>custom dataclass (birthdate)</li>
 	</ol>
 	<div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
 		<vue-datatable :api-url="apiUrl"
@@ -75,6 +78,9 @@ const sortOrder = {
 		/>
 	</div>
 
+	<ol>
+		<li>compact pagination</li>
+	</ol>
 	<div class="mt-2 inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
 		<vue-datatable :api-url="apiUrl"
 					   :fields="fields2"
