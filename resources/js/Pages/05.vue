@@ -35,7 +35,7 @@ const defaultCss = {
 	// pagination normal
 	paginationNormalWrapper: '-mx-4 mt-3 flex text-sm text-gray-800 sm:mx-0 sm:justify-between',
 	paginationNormalPagingWrapper: 'mx-auto flex rounded-md bg-gray-50 sm:mx-0 sm:w-auto',
-	paginationNormalArrowLeft: 'items-center rounded-l-md p-2 text-gray-300 hover:bg-gray-300 focus:outline-none',
+	paginationNormalArrowLeft: 'items-center rounded-l-md p-2 hover:bg-gray-300 focus:outline-none',
 	paginationNormalArrowLeftCurrent: 'cursor-not-allowed items-center rounded-l-md p-2 text-gray-400 hover:bg-gray-50 focus:outline-none',
 	paginationNormalPages: 'items-center px-3 py-2 hover:bg-gray-300 focus:outline-none',
 	paginationNormalPagesCurrent: 'cursor-not-allowed items-center bg-indigo-50 px-3 py-2 text-indigo-600 outline outline-indigo-500',
@@ -83,6 +83,12 @@ const defaultCss = {
 					<th class="hidden px-4 py-3.5 text-left uppercase sm:table-cell">
 						Position
 					</th>
+					<th class="px-4 py-3.5 text-left uppercase">
+						Status
+					</th>
+					<th class="px-4 py-3.5 text-left uppercase">
+						Book
+					</th>
 					<!-- *tableHeaderCellClass -->
 					<th class="hidden px-4 py-3.5 text-left uppercase sm:table-cell">
 						Birthdate
@@ -116,6 +122,12 @@ const defaultCss = {
 					<td class="hidden p-3 align-top sm:table-cell"><!-- *tableDataClass -->
 						Manager
 					</td>
+					<td class="p-3 align-top"><!-- *tableDataClass -->
+						active
+					</td>
+					<td class="p-3 align-top"><!-- *tableDataClass -->
+						Harry Potter and the prisoner of Azkhaban
+					</td>
 					<td class="hidden p-3 align-top sm:table-cell"><!-- *tableDataClass -->
 						2013-05-20
 					</td>
@@ -146,6 +158,12 @@ const defaultCss = {
 					<td class="hidden p-3 align-top sm:table-cell"><!-- *tableDataClass -->
 						Assistant to the Regional Manager
 					</td>
+					<td class="p-3 align-top"><!-- *tableDataClass -->
+						inactive
+					</td>
+					<td class="p-3 align-top"><!-- *tableDataClass -->
+						Lord of the Rings: Fellowship of the Ring
+					</td>
 					<td class="hidden p-3 align-top sm:table-cell"><!-- *tableDataClass -->
 						2007-05-20
 					</td>
@@ -175,6 +193,12 @@ const defaultCss = {
 					</td>
 					<td class="hidden p-3 align-top sm:table-cell"><!-- *tableDataClass -->
 						Dunder Mifflin Salesman
+					</td>
+					<td class="p-3 align-top"><!-- *tableDataClass -->
+						active
+					</td>
+					<td class="p-3 align-top"><!-- *tableDataClass -->
+						The Hobbit: Desolation of Smaug
 					</td>
 					<td class="hidden p-3 align-top sm:table-cell"><!-- *tableDataClass -->
 						2005-08-31
