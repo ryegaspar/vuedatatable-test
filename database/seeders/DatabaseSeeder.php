@@ -17,15 +17,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        User::factory(100)->create();
-        Shop::factory(5)->create();
-        Product::factory(20)->create();
-
-        Shop::find(1)->products()->attach(Product::find(1));
-        Shop::find(1)->products()->attach(Product::find(2));
-
-		Post::factory(100)->create([
-			'user_id' => User::find(1)
-		]);
+        User::factory(200)->create();
+//        Shop::factory(5)->create();
+//        Product::factory(20)->create();
+//
+//        Shop::find(1)->products()->attach(Product::find(1));
+//        Shop::find(1)->products()->attach(Product::find(2));
+//
+//		Post::factory(100)->create([
+//			'user_id' => User::find(1)
+//		]);
     }
 }
