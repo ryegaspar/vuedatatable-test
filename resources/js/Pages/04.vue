@@ -23,6 +23,10 @@ let fields = [
 		title: 'Nickname',
 	},
 	{
+		name: '__component:Status',
+		title: 'Status'
+	},
+	{
 		name: 'birthdate',
 		title: 'Birthdate',
 		callback: function (value) {

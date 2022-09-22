@@ -5,6 +5,7 @@ import {
 } from 'vue'
 import { InertiaProgress } from '@inertiajs/progress'
 import Navigation from '../js/Layouts/Navigation.vue'
+import Status from './Components/Status.vue'
 import VueDatatable from '@rgaspar/vuedatatable'
 import { ZiggyVue } from '../../vendor/tightenco/ziggy/dist/vue.m'
 import { createInertiaApp } from '@inertiajs/inertia-vue3'
@@ -24,11 +25,16 @@ createInertiaApp({
 	setup({
 		el, app, props, plugin 
 	}) {
-		return createApp({ render: () => h(app, props) })
+		const inertiaApp = createApp({ render: () => h(app, props) })
 			.use(plugin)
 			.use(ZiggyVue, Ziggy)
 			.use(VueDatatable)
-			.mount(el)
+
+		inertiaApp.component('Status', Status)
+
+		inertiaApp.mount(el)
+
+		return inertiaApp
 	},
 })
 

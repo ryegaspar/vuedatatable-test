@@ -21,7 +21,7 @@ const fields = [
 		title: 'Nickname',
 	},
 	{
-		name: 'status',
+		name: '__component:Status',
 		title: 'Status'
 	},
 	{

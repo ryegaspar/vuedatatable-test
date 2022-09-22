@@ -52,21 +52,21 @@ let fields2 = [
 </script>
 
 <template>
-	<h2 class="font-bold text-xl">custom options</h2>
+	<h2 class="text-xl font-bold">custom options</h2>
 	<ol>
 		<li>hide sort icons</li>
 		<li>append params = someParam: true</li>
 		<li>hide loading</li>
 		<li>no pagination when no data</li>
 	</ol>
-	<div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+	<div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
 		<vue-datatable :api-url="apiUrl"
 					   :fields="fields"
 					   :sortOrder="sortOrder"
 					   :options="{showLoading: false, showSortIcons: false, appendParams: {someParam: true}, silent: true}"
 		/>
 	</div>
-	<div class="mt-5 py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+	<div class="mt-5 inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
 		<vue-datatable api-url=""
 					   :fields="fields2"
 		/>
