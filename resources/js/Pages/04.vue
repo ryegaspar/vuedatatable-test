@@ -32,11 +32,23 @@ let fields = [
 		callback: function (value) {
 			return format(new Date(value), 'MMM dd yyyy')
 		}
+	},
+	{
+		name: '__slot:actions',
+		title: 'Actions',
 	}
 ]
 let sortOrder = {
 	field: 'email',
 	direction: 'desc'
+}
+
+function edit(rowData) {
+	alert(rowData.name)
+}
+
+function deleteUser( rowData ) {
+	alert(rowData.nickname)
 }
 
 </script>
@@ -50,6 +62,21 @@ let sortOrder = {
 		<vue-datatable :api-url="apiUrl"
 					   :fields="fields"
 					   :sortOrder="sortOrder"
-		/>
+		>
+			<template #actions="{rowData}">
+				<div>
+					<button class="rounded-md bg-blue-400 p-1.5 text-gray-900 hover:bg-blue-500 focus:outline-none"
+							@click.prevent="edit(rowData)"
+					>
+						Edit
+					</button>
+					<button class="ml-2 rounded-md bg-red-400 p-1.5 text-gray-900 hover:bg-red-500 focus:outline-none"
+							@click.prevent="deleteUser(rowData)"
+					>
+						Delete
+					</button>
+				</div>
+			</template>
+		</vue-datatable>
 	</div>
 </template>
