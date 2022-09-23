@@ -21,6 +21,10 @@ let pages = [
 	{
 		link: '05',
 		title: 'not a vuedatatable'
+	},
+	{
+		link: '06',
+		title: 'experimental'
 	}
 ]
 

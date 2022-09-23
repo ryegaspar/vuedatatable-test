@@ -32,6 +32,9 @@ Route::get('/04', fn() => Inertia::render('04'))
 Route::get('/05', fn() => Inertia::render('05'))
 	->name('05');
 
+Route::get('/06', fn() => Inertia::render('06'))
+	->name('06');
+
 
 //Route::get('/05', fn() => Inertia::render('05'))
 //	->name('05');
