@@ -11,7 +11,9 @@ class UserController extends Controller
 {
 	public function __invoke(Request $request)
 	{
-		sleep(1);
+		if ($request->has('delay')) {
+			sleep(1);
+		}
 
 		$users = QueryBuilder::for(User::class)
 			->allowedSorts('email', 'id');
