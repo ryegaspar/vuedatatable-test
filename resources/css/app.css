@@ -18,11 +18,17 @@
 }
 
 table.vuedatatable-loading tbody {
-	@apply relative
+	@apply relative;
 }
 
 table.vuedatatable-loading tbody:after {
 	@apply absolute inset-0 bg-gray-700/25 bg-center bg-no-repeat backdrop-blur-sm content-[''];
+	animation: fadeIn 400ms;
 	background-size: 50px 50px;
 	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' id='loadingSvg'%3E%3Cstyle type='text/css'%3E %23loadingSvg%7Banimation:spin 1s linear infinite%7D@keyframes spin%7Bfrom%7Btransform:rotate(0deg)%7Dto%7Btransform:rotate(360deg)%7D%7D%3C/style%3E%3Ccircle style='opacity:0.25' cx='12' cy='12' r='10' stroke='%23374151' stroke-width='4'%3E%3C/circle%3E%3Cpath style='opacity:0.75' fill='%231F2937' d='M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+@keyframes fadeIn {
+	0% {opacity: 0;}
+	100% {opacity: 1}
 }

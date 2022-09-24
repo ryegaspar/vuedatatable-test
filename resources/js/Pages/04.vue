@@ -29,6 +29,7 @@ let fields = [
 	{
 		name: 'birthdate',
 		title: 'Birthdate',
+		dataClass: 'font-bold text-xs align-content-center',
 		callback: function (value) {
 			return format(new Date(value), 'MMM dd yyyy')
 		}
