@@ -15,13 +15,13 @@ const defaultCss = {
 	tableClass: 'min-w-full divide-y divide-gray-300',
 
 	// table header
-	tableHeaderClass: 'bg-gray-800 text-gray-100',
-	tableHeaderCellClass: 'px-4 py-3.5 text-left uppercase',
+	tableHeaderClass: 'bg-slate-800 text-gray-100 ring-1 ring-inset ring-white/10',
+	tableHeaderCellClass: 'px-4 py-3.5 uppercase',
 	tableHeaderClassSortable: 'hover:cursor-pointer',
 
 	// body, row, data
 	tableBodyClass: 'text-gray-800',
-	tableRowClass: 'bg-gray-50 text-sm even:bg-gray-300',
+	tableRowClass: 'bg-gray-50 even:bg-slate-300',
 	tableRowNoDataClass: 'text-center font-bold text-red-400',
 	tableDataClass: 'p-3 align-top',
 
@@ -61,42 +61,42 @@ const defaultCss = {
 	<div>
 		<div class="-mx-6 text-sm shadow sm:-mx-6 md:mx-0 md:overflow-hidden md:rounded-lg"><!-- tableWrapperClass -->
 			<table class="min-w-full divide-y divide-gray-300"><!-- tableClass-->
-				<thead class="bg-gray-800 text-gray-100"><!-- tableHeaderClass -->
+				<thead class="bg-slate-800 text-gray-100 ring-1 ring-inset ring-white/10"><!-- tableHeaderClass -->
 				<tr>
 					<!-- *tableHeaderCellClass, *tableHeaderClassSortable -->
-					<th class="hidden px-4 py-3.5 text-left uppercase hover:cursor-pointer lg:table-cell">
+					<th class="hidden px-4 py-3.5 uppercase hover:cursor-pointer lg:table-cell">
 						ID<span class="vuedatatable-sort-neutral"></span><!-- sortNeutralClass -->
 					</th>
 					<!-- tableHeaderCellClass -->
-					<th class="px-4 py-3.5 text-left uppercase">
+					<th class="px-4 py-3.5 uppercase">
 						Name
 					</th>
 					<!-- tableHeaderCellClass -->
-					<th class="px-4 py-3.5 text-left uppercase">
+					<th class="px-4 py-3.5 uppercase">
 						Email
 					</th>
 					<!-- *tableHeaderCellClass -->
-					<th class="hidden px-4 py-3.5 text-left uppercase lg:table-cell">
+					<th class="hidden px-4 py-3.5 uppercase lg:table-cell">
 						Nickname
 					</th>
 					<!-- *tableHeaderCellClass -->
-					<th class="hidden px-4 py-3.5 text-left uppercase sm:table-cell">
+					<th class="hidden px-4 py-3.5 uppercase sm:table-cell">
 						Position
 					</th>
-					<th class="px-4 py-3.5 text-left uppercase">
+					<th class="px-4 py-3.5 uppercase">
 						Status
 					</th>
-					<th class="px-4 py-3.5 text-left uppercase">
+					<th class="px-4 py-3.5 uppercase">
 						Book
 					</th>
 					<!-- *tableHeaderCellClass -->
-					<th class="hidden px-4 py-3.5 text-left uppercase sm:table-cell">
+					<th class="hidden px-4 py-3.5 uppercase sm:table-cell">
 						Birthdate
 					</th>
 				</tr>
 				</thead>
 				<tbody class="text-gray-800"><!-- tableBodyClass -->
-				<tr class="bg-gray-50 text-sm even:bg-gray-300"><!-- tableRowClass -->
+				<tr class="bg-gray-50 even:bg-slate-300"><!-- tableRowClass -->
 					<td class="hidden p-3 align-top text-sm lg:table-cell"><!-- tableDataClass (p-3 text-sm align-top)-->
 						1
 					</td>
@@ -132,7 +132,7 @@ const defaultCss = {
 						2013-05-20
 					</td>
 				</tr>
-				<tr class="bg-gray-50 text-sm even:bg-gray-300"><!-- tableRowClass -->
+				<tr class="bg-gray-50 even:bg-slate-300"><!-- tableRowClass -->
 					<td class="hidden p-3 align-top lg:table-cell"><!-- *tableDataClass -->
 						2
 					</td>
@@ -168,7 +168,7 @@ const defaultCss = {
 						2007-05-20
 					</td>
 				</tr>
-				<tr class="bg-gray-50 text-sm even:bg-gray-300"><!-- tableRowClass -->
+				<tr class="bg-gray-50 even:bg-slate-300"><!-- tableRowClass -->
 					<td class="hidden p-3 align-top lg:table-cell"><!-- *tableDataClass -->
 						3
 					</td>
