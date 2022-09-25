@@ -45,6 +45,11 @@ const fields = [
 		}
 	},
 	{
+		name: 'created_at',
+		title: 'Created At',
+		visible: false
+	},
+	{
 		name: '__slot:actions',
 		title: 'Actions',
 	}

@@ -39,10 +39,15 @@ let fields = [
 	{
 		name: 'birthdate',
 		title: 'Birthdate',
-		dataClass: 'font-bold text-xs align-content-center',
+		dataClass: 'font-bold text-xs text-center',
 		callback: function (value) {
 			return format(new Date(value), 'MMM dd yyyy')
 		}
+	},
+	{
+		name: 'created_at',
+		title: 'Created At',
+		visible: false
 	},
 	{
 		name: '__slot:actions',
