@@ -63,7 +63,8 @@ let fields2 = [
 		<vue-datatable :api-url="apiUrl"
 					   :fields="fields"
 					   :sortOrder="sortOrder"
-					   :options="{showLoading: false, showSortIcons: false, appendParams: {someParam: true}, silent: true}"
+					   :options="{showLoading: false, showSortIcons: false, silent: true}"
+					   :appendParams="{someParam: true, someParam2: '2'}"
 		/>
 	</div>
 	<div class="mt-5 inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">

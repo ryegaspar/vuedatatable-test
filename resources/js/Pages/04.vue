@@ -11,7 +11,7 @@ import {
 } from 'vue'
 import format from 'date-fns/format'
 
-let apiUrl = '/users?delay'
+let apiUrl = '/users'
 let fields = [
 	{
 		name: 'id',
@@ -60,10 +60,38 @@ const pages = [
 const selectedPerPage = ref(pages[0])
 const vuedatatable = ref(null)
 
+const statuses = [
+	{
+		optionKey: 'none',
+		optionValue: ''
+	},
+	{
+		optionKey: 'inactive',
+		optionValue: 0
+	},
+	{
+		optionKey: 'active',
+		optionValue: 1
+	}
+]
+
+const selectedStatus = ref(statuses[0])
+const appendParams = ref({ 'delay' : 1 })
+
 watch(selectedPerPage, () => {
-	nextTick(() => {
-		vuedatatable.value.refresh()
-	})
+	nextTick(() => vuedatatable.value.refresh())
+})
+
+watch(selectedStatus, (newVal, oldVal) => {
+	if (typeof newVal.optionValue === 'number') {
+		appendParams.value['filter[status]'] = newVal.optionValue
+	} else {
+		delete appendParams.value['filter[status]']
+	}
+
+	console.log(appendParams.value)
+
+	nextTick(() => vuedatatable.value.refresh())
 })
 
 function edit(rowData) {
@@ -82,7 +110,8 @@ function deleteUser( rowData ) {
 		<li>table loading animation</li>
 	</ol>
 	<div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
-		<div class="inline-block">
+		<div class="flex">
+			<!-- per page -->
 			<Listbox v-model="selectedPerPage">
 				<div class="relative mt-1">
 					<ListboxButton class="relative w-full cursor-default rounded-lg bg-slate-800 py-2 pl-3 pr-10 text-left shadow-md ring-1 ring-inset ring-white/10 focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
@@ -104,7 +133,7 @@ function deleteUser( rowData ) {
 								leave-from-class="opacity-100"
 								leave-to-class="opacity-0"
 					>
-						<ListboxOptions class="absolute z-10 mt-1 max-h-60 w-full rounded-md bg-gray-700 bg-opacity-80 py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 backdrop-blur focus:outline-none sm:text-sm">
+						<ListboxOptions class="absolute z-10 mt-1 max-h-60 w-full rounded-md bg-slate-800 bg-opacity-80 py-1 text-base shadow-lg ring-1 ring-inset ring-white/10 ring-opacity-5 backdrop-blur focus:outline-none sm:text-sm">
 							<ListboxOption v-for="(page, index) in pages"
 										   v-slot="{ active, selected }"
 										   :key="index"
@@ -112,8 +141,8 @@ function deleteUser( rowData ) {
 										   as="template"
 							>
 								<li :class="[
-										active ? 'bg-amber-100 bg-opacity-80 text-amber-900' : 'text-gray-200',
-										'relative cursor-default select-none p-2'
+										active ? 'bg-indigo-400 bg-opacity-80' : '',
+										'relative cursor-default select-none p-2 text-gray-200'
 									]"
 								>
 									<span :class="[
@@ -128,12 +157,62 @@ function deleteUser( rowData ) {
 					</transition>
 				</div>
 			</Listbox>
+			<!-- filter -->
+			<Listbox v-model="selectedStatus"
+					 class="ml-2"
+			>
+				<div class="relative mt-1">
+					<ListboxButton class="relative w-full cursor-default rounded-lg bg-slate-800 py-2 pl-3 pr-10 text-left shadow-md ring-1 ring-inset ring-white/10 focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
+						<span class="block truncate">{{ selectedStatus.optionKey }}</span>
+						<span class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
+							<svg class="-mr-1 ml-2 h-5 w-5"
+								 viewBox="0 0 20 20"
+								 fill="currentColor"
+							>
+							<path fill-rule="evenodd"
+								  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+								  clip-rule="evenodd"
+							/>
+						</svg>
+						</span>
+					</ListboxButton>
+
+					<transition leave-active-class="transition duration-100 ease-in"
+								leave-from-class="opacity-100"
+								leave-to-class="opacity-0"
+					>
+						<ListboxOptions class="absolute z-10 mt-1 max-h-60 w-full rounded-md bg-slate-800 bg-opacity-80 py-1 text-base shadow-lg ring-1 ring-inset ring-white/10 ring-opacity-5 backdrop-blur focus:outline-none sm:text-sm">
+							<ListboxOption v-for="(status, index) in statuses"
+										   v-slot="{ active, selected }"
+										   :key="index"
+										   :value="status"
+										   as="template"
+							>
+								<li :class="[
+										active ? 'bg-indigo-400 bg-opacity-80' : '',
+										'relative cursor-default select-none p-2 text-gray-200'
+									]"
+								>
+									<span :class="[
+												selected ? 'font-medium' : 'font-normal','block truncate'
+											]"
+									>
+										{{ status.optionKey }}
+									</span>
+								</li>
+							</ListboxOption>
+						</ListboxOptions>
+					</transition>
+				</div>
+			</Listbox>
+			<!-- search -->
 		</div>
 		<vue-datatable ref="vuedatatable"
-					   :api-url="apiUrl"
+					   :apiUrl="apiUrl"
 					   :fields="fields"
 					   :sortOrder="sortOrder"
 					   :perPage="selectedPerPage"
+					   :appendParams="appendParams"
 		>
 			<template #actions="{rowData}">
 				<div>
@@ -151,8 +230,7 @@ function deleteUser( rowData ) {
 			</template>
 		</vue-datatable>
 
-		<vue-datatable ref="vuedatatable"
-					   :api-url="apiUrl"
+		<vue-datatable :api-url="apiUrl"
 					   :fields="fields"
 					   :sortOrder="sortOrder"
 					   :perPage="selectedPerPage"
