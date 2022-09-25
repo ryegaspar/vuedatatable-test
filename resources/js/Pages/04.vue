@@ -241,6 +241,7 @@ function search() {
 					   :fields="fields"
 					   :sortOrder="sortOrder"
 					   :perPage="selectedPerPage"
+					   :options="{loadingRows: 3}"
 					   :appendParams="appendParams"
 		>
 			<template #actions="{rowData}">
