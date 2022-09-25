@@ -3,16 +3,12 @@ const defaultCss = {
 	// loading
 	loadingWrapperClass: 'flex animate-pulse',
 	loadingDataClass: 'inline-block h-4 rounded-md bg-gray-500 text-xs text-gray-500',
-	loadingEnterActiveClass: 'duration-200 ease-out',
-	loadingEnterFromClass: 'transform opacity-0',
-	loadingEnterToClass: 'opacity-100',
-	loadingLeaveActiveClass: 'duration-200 ease-in',
-	loadingLeaveFromClass: 'opacity-100',
-	loadingLeaveToClass: 'transform opacity-0',
+
+	mainWrapperClass: 'inline-block sm:flex sm:flex-col',
 
 	// table
-	tableWrapperClass: '-mx-6 text-sm shadow sm:-mx-6 md:mx-0 md:overflow-hidden md:rounded-lg',
-	tableClass: 'min-w-full divide-y divide-gray-300',
+	tableWrapperClass: '-mx-6 rounded-lg text-sm shadow md:mx-0 md:overflow-hidden',
+	tableClass: 'min-w-full',
 
 	// table header
 	tableHeaderClass: 'bg-slate-800 text-gray-100 ring-1 ring-inset ring-white/10',
@@ -33,20 +29,21 @@ const defaultCss = {
 	paginationInfo: 'hidden py-2 text-gray-200 sm:flex',
 
 	// pagination normal
-	paginationNormalWrapper: '-mx-4 mt-3 flex text-sm text-gray-800 sm:mx-0 sm:justify-between',
+	paginationNormalWrapper: '-mx-4 mt-3 flex text-sm text-gray-800 sm:justify-between md:mx-0',
 	paginationNormalPagingWrapper: 'mx-auto flex rounded-md bg-gray-50 sm:mx-0 sm:w-auto',
 	paginationNormalArrowLeft: 'items-center rounded-l-md p-2 hover:bg-gray-300 focus:outline-none',
 	paginationNormalArrowLeftCurrent: 'cursor-not-allowed items-center rounded-l-md p-2 text-gray-400 hover:bg-gray-50 focus:outline-none',
 	paginationNormalPages: 'items-center px-3 py-2 hover:bg-gray-300 focus:outline-none',
-	paginationNormalPagesCurrent: 'cursor-not-allowed items-center bg-indigo-50 px-3 py-2 text-indigo-600 outline outline-indigo-500',
+	paginationNormalPagesCurrent: 'relative z-10 cursor-not-allowed items-center bg-indigo-50 px-3 py-2 text-indigo-600 outline outline-indigo-500',
 	paginationNormalArrowRight: 'items-center rounded-r-md p-2 hover:bg-gray-300 focus:outline-none',
 	paginationNormalArrowRightCurrent: 'cursor-not-allowed items-center rounded-r-md p-2 text-gray-400 hover:bg-gray-50 focus:outline-none',
 
 	// pagination compact
-	paginationCompactPagingWrapper: '-mx-4 mt-3 flex justify-between text-sm sm:mx-0',
+	paginationCompactWrapper: '-mx-4 mt-3 flex text-sm md:mx-0',
+	paginationCompactPagingWrapper: 'flex flex-1 justify-between sm:justify-end',
 	paginationCompactArrowLeft: 'items-center rounded-md bg-gray-50 px-3 py-2 text-gray-800 hover:bg-gray-300',
 	paginationCompactArrowLeftCurrent: 'cursor-not-allowed items-center rounded-md bg-gray-50 px-3 py-2 text-gray-400 hover:bg-gray-50',
-	paginationCompactArrowRight: 'ml-3 items-center rounded-md bg-gray-50 px-3 py-2 text-gray-800 hover:bg-gray-50',
+	paginationCompactArrowRight: 'ml-3 items-center rounded-md bg-gray-50 px-3 py-2 text-gray-800 hover:bg-gray-300',
 	paginationCompactArrowRightCurrent: 'ml-3 cursor-not-allowed items-center rounded-md bg-gray-50 px-3 py-2 text-gray-400 hover:bg-gray-50'
 }
 // sortIconClass: 'fill-cyan-600', ** UNUSED **
@@ -58,9 +55,9 @@ const defaultCss = {
 </script>
 
 <template>
-	<div>
-		<div class="-mx-6 text-sm shadow sm:-mx-6 md:mx-0 md:overflow-hidden md:rounded-lg"><!-- tableWrapperClass -->
-			<table class="min-w-full divide-y divide-gray-300"><!-- tableClass-->
+	<div class="inline-block sm:flex sm:flex-col"><!-- mainWrapperClass -->
+		<div class="-mx-6 rounded-lg text-sm shadow md:mx-0 md:overflow-hidden"><!-- tableWrapperClass -->
+			<table class="min-w-full"><!-- tableClass-->
 				<thead class="bg-slate-800 text-gray-100 ring-1 ring-inset ring-white/10"><!-- tableHeaderClass -->
 				<tr>
 					<!-- *tableHeaderCellClass, *tableHeaderClassSortable -->
@@ -207,7 +204,7 @@ const defaultCss = {
 				</tbody>
 			</table>
 		</div>
-		<nav class="-mx-4 mt-3 flex text-sm text-gray-800 sm:mx-0 sm:justify-between"><!-- paginationNormalWrapper -->
+		<nav class="-mx-4 mt-3 flex text-sm text-gray-800 sm:justify-between md:mx-0"><!-- paginationNormalWrapper -->
 			<div class="hidden py-2 text-gray-200 sm:flex"><!-- paginationInfo -->
 				Displaying 1 to 10 of 49 items
 			</div>
@@ -273,7 +270,7 @@ const defaultCss = {
 			</ul>
 		</nav>
 		<!-- paginationCompactWrapper -->
-		<nav class="-mx-4 mt-3 flex justify-between text-sm sm:mx-0"
+		<nav class="-mx-4 mt-3 flex text-sm md:mx-0"
 			 aria-label="Pagination"
 		>
 			<div class="hidden py-2 text-gray-200 sm:flex"><!-- paginationInfo -->
