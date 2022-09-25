@@ -19,7 +19,7 @@ const defaultCss = {
 	tableBodyClass: 'text-gray-800',
 	tableRowClass: 'bg-gray-50 even:bg-slate-300',
 	tableRowNoDataClass: 'text-center font-bold text-red-400',
-	tableDataClass: 'p-3 align-top',
+	tableDataClass: 'p-2',
 
 	// sort
 	sortAscendingClass: 'vuedatatable-sort-ascending',
@@ -90,6 +90,9 @@ const defaultCss = {
 					<th class="hidden px-4 py-3.5 uppercase sm:table-cell">
 						Birthdate
 					</th>
+					<th class="px-4 py-3.5 uppercase">
+						Actions
+					</th>
 				</tr>
 				</thead>
 				<tbody class="text-gray-800"><!-- tableBodyClass -->
@@ -97,7 +100,7 @@ const defaultCss = {
 					<td class="hidden p-3 align-top text-sm lg:table-cell"><!-- tableDataClass (p-3 text-sm align-top)-->
 						1
 					</td>
-					<td class="p-3 align-top"><!-- tableDataClass -->
+					<td class="p-2"><!-- tableDataClass -->
 						Devyn Toy DDS
 						<dl class="lg:hidden">
 							<dt class="sr-only">Nickname</dt>
@@ -106,34 +109,44 @@ const defaultCss = {
 							<dd class="sm:hidden">2013-05-20</dd>
 						</dl>
 					</td>
-					<td class="p-3 align-top"><!-- tableDataClass -->
+					<td class="p-2"><!-- tableDataClass -->
 						zzboncak@example.net
 						<dl class="sm:hidden">
 							<dt class="sr-only sm:hidden">Position</dt>
 							<dd class="sm:hidden">Manager</dd>
 						</dl>
 					</td>
-					<td class="hidden p-3 align-top lg:table-cell"><!-- *tableDataClass -->
+					<td class="hidden p-2 lg:table-cell"><!-- *tableDataClass -->
 						Kacey
 					</td>
-					<td class="hidden p-3 align-top sm:table-cell"><!-- *tableDataClass -->
+					<td class="hidden p-2 sm:table-cell"><!-- *tableDataClass -->
 						Manager
 					</td>
-					<td class="p-3 align-top"><!-- *tableDataClass -->
+					<td class="p-2"><!-- *tableDataClass -->
 						active
 					</td>
-					<td class="p-3 align-top"><!-- *tableDataClass -->
+					<td class="p-2"><!-- *tableDataClass -->
 						Harry Potter and the prisoner of Azkhaban
 					</td>
-					<td class="hidden p-3 align-top sm:table-cell"><!-- *tableDataClass -->
+					<td class="hidden p-2 sm:table-cell"><!-- *tableDataClass -->
 						2013-05-20
+					</td>
+					<td class="p-2">
+						<div>
+							<button class="rounded-md bg-blue-400 p-1.5 text-gray-900 hover:bg-blue-500 focus:outline-none">
+								Edit
+							</button>
+							<button class="ml-2 rounded-md bg-red-400 p-1.5 text-gray-900 hover:bg-red-500 focus:outline-none">
+								Delete
+							</button>
+						</div>
 					</td>
 				</tr>
 				<tr class="bg-gray-50 even:bg-slate-300"><!-- tableRowClass -->
-					<td class="hidden p-3 align-top lg:table-cell"><!-- *tableDataClass -->
+					<td class="hidden p-2 lg:table-cell"><!-- *tableDataClass -->
 						2
 					</td>
-					<td class="p-3 align-top"><!-- *tableDataClass -->
+					<td class="p-2"><!-- *tableDataClass -->
 						Mrs. Earline Kessler
 						<dl class="lg:hidden">
 							<dt class="sr-only">Nickname</dt>
@@ -142,34 +155,44 @@ const defaultCss = {
 							<dd class="sm:hidden">2007-05-20</dd>
 						</dl>
 					</td>
-					<td class="p-3 align-top"><!-- tableDataClass -->
+					<td class="p-2"><!-- tableDataClass -->
 						aabonjak@example.com
 						<dl class="sm:hidden">
 							<dt class="sr-only sm:hidden">Position</dt>
 							<dd class="sm:hidden">Assistant to the Regional Manager</dd>
 						</dl>
 					</td>
-					<td class="hidden p-3 align-top lg:table-cell"><!-- *tableDataClass -->
+					<td class="hidden p-2 lg:table-cell"><!-- *tableDataClass -->
 						Metcha
 					</td>
-					<td class="hidden p-3 align-top sm:table-cell"><!-- *tableDataClass -->
+					<td class="hidden p-2 sm:table-cell"><!-- *tableDataClass -->
 						Assistant to the Regional Manager
 					</td>
-					<td class="p-3 align-top"><!-- *tableDataClass -->
+					<td class="p-2"><!-- *tableDataClass -->
 						inactive
 					</td>
-					<td class="p-3 align-top"><!-- *tableDataClass -->
+					<td class="p-2"><!-- *tableDataClass -->
 						Lord of the Rings: Fellowship of the Ring
 					</td>
-					<td class="hidden p-3 align-top sm:table-cell"><!-- *tableDataClass -->
+					<td class="hidden p-2 sm:table-cell"><!-- *tableDataClass -->
 						2007-05-20
+					</td>
+					<td class="p-2">
+						<div>
+							<button class="rounded-md bg-blue-400 p-1.5 text-gray-900 hover:bg-blue-500 focus:outline-none">
+								Edit
+							</button>
+							<button class="ml-2 rounded-md bg-red-400 p-1.5 text-gray-900 hover:bg-red-500 focus:outline-none">
+								Delete
+							</button>
+						</div>
 					</td>
 				</tr>
 				<tr class="bg-gray-50 even:bg-slate-300"><!-- tableRowClass -->
-					<td class="hidden p-3 align-top lg:table-cell"><!-- *tableDataClass -->
+					<td class="hidden p-2 lg:table-cell"><!-- *tableDataClass -->
 						3
 					</td>
-					<td class="p-3 align-top"><!-- tableDataClass -->
+					<td class="p-2"><!-- tableDataClass -->
 						Vanezz Lee
 						<dl class="lg:hidden">
 							<dt class="sr-only">Nickname</dt>
@@ -178,27 +201,37 @@ const defaultCss = {
 							<dd class="sm:hidden">2005-08-31</dd>
 						</dl>
 					</td>
-					<td class="p-3 align-top"><!-- tableDataClass -->
+					<td class="p-2"><!-- tableDataClass -->
 						yurimasu@masudk.com
 						<dl class="sm:hidden">
 							<dt class="sr-only sm:hidden">Position</dt>
 							<dd class="sm:hidden">Dunder Mifflin Salesman</dd>
 						</dl>
 					</td>
-					<td class="hidden p-3 align-top lg:table-cell"><!-- *tableDataClass -->
+					<td class="hidden p-2 lg:table-cell"><!-- *tableDataClass -->
 						Gene
 					</td>
-					<td class="hidden p-3 align-top sm:table-cell"><!-- *tableDataClass -->
+					<td class="hidden p-2 sm:table-cell"><!-- *tableDataClass -->
 						Dunder Mifflin Salesman
 					</td>
-					<td class="p-3 align-top"><!-- *tableDataClass -->
+					<td class="p-2"><!-- *tableDataClass -->
 						active
 					</td>
-					<td class="p-3 align-top"><!-- *tableDataClass -->
+					<td class="p-2"><!-- *tableDataClass -->
 						The Hobbit: Desolation of Smaug
 					</td>
-					<td class="hidden p-3 align-top sm:table-cell"><!-- *tableDataClass -->
+					<td class="hidden p-2 sm:table-cell"><!-- *tableDataClass -->
 						2005-08-31
+					</td>
+					<td class="p-2">
+						<div>
+							<button class="rounded-md bg-blue-400 p-1.5 text-gray-900 hover:bg-blue-500 focus:outline-none">
+								Edit
+							</button>
+							<button class="ml-2 rounded-md bg-red-400 p-1.5 text-gray-900 hover:bg-red-500 focus:outline-none">
+								Delete
+							</button>
+						</div>
 					</td>
 				</tr>
 				</tbody>
