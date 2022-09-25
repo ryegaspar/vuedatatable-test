@@ -225,7 +225,7 @@ function search() {
 					<input id="search"
 						   v-model="searchParam"
 						   type="text"
-						   class="h-8 border-0 bg-slate-800 bg-opacity-80 text-gray-200 focus:ring-0"
+						   class="h-8 rounded-l border-0 bg-slate-800 bg-opacity-80 text-gray-200 focus:ring-0"
 					/>
 					<button type="submit"
 							class="rounded-r-lg border-0 border-l border-slate-600 bg-slate-800 bg-opacity-80 px-3 text-gray-200 hover:bg-slate-600"

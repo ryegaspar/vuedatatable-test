@@ -4,7 +4,7 @@ const defaultCss = {
 	loadingWrapperClass: 'flex animate-pulse',
 	loadingDataClass: 'inline-block h-4 rounded-md bg-gray-500 text-xs text-gray-500',
 
-	mainWrapperClass: 'inline-block sm:flex sm:flex-col',
+	mainWrapperClass: 'xs:flex xs:flex-col inline-block min-w-full',
 
 	// table
 	tableWrapperClass: '-mx-6 rounded-lg text-sm shadow md:mx-0 md:overflow-hidden',
@@ -55,7 +55,7 @@ const defaultCss = {
 </script>
 
 <template>
-	<div class="inline-block sm:flex sm:flex-col"><!-- mainWrapperClass -->
+	<div class="xs:flex xs:flex-col inline-block min-w-full"><!-- mainWrapperClass -->
 		<div class="-mx-6 rounded-lg text-sm shadow md:mx-0 md:overflow-hidden"><!-- tableWrapperClass -->
 			<table class="min-w-full"><!-- tableClass-->
 				<thead class="bg-slate-800 text-gray-100 ring-1 ring-inset ring-white/10"><!-- tableHeaderClass -->
