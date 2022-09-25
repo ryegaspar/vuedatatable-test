@@ -109,6 +109,7 @@ const statuses = [
 
 const selectedStatus = ref(statuses[0])
 const appendParams = ref({})
+const searchParam = ref('')
 
 watch(selectedPerPage, (newVal, oldVal) => {
 	nextTick(() => vuedatatable.value.refresh())
@@ -131,6 +132,16 @@ function edit(rowData) {
 function deleteUser( rowData ) {
 	alert(rowData.nickname)
 }
+
+function search() {
+	if (searchParam.value) {
+		appendParams.value['filter[search]'] = searchParam.value
+	} else {
+		delete appendParams.value['filter[search]']
+	}
+
+	vuedatatable.value.refresh()
+}
 </script>
 
 <template>
@@ -143,7 +154,7 @@ function deleteUser( rowData ) {
 		<li>custom dataclass (birthdate)</li>
 	</ol>
 	<div class="min-w-full py-2 align-middle sm:px-6 lg:px-8">
-		<div class="flex">
+		<div class="flex items-center">
 			<!-- per page -->
 			<Listbox v-model="selectedPerPage">
 				<div class="relative mt-1">
@@ -239,6 +250,27 @@ function deleteUser( rowData ) {
 				</div>
 			</Listbox>
 			<!-- search -->
+			<form class="flex items-center space-x-2 py-2 px-3 text-sm"
+				  @submit.prevent="search"
+			>
+				<label for="search">Search:</label>
+				<span class="flex rounded-md ring-1 ring-white/10 ring-opacity-5 focus-within:ring-2 focus-within:ring-white focus-within:ring-opacity-75 focus-within:ring-offset-2 focus-within:ring-offset-orange-300"
+					  tabindex="1"
+				>
+					<input id="search"
+						   v-model="searchParam"
+						   type="text"
+						   class="h-8 rounded-l-lg border-0 bg-slate-800 bg-opacity-80 text-gray-200 focus:ring-0"
+					/>
+					<button type="submit"
+							class="rounded-r-lg border-0 border-l border-slate-600 bg-slate-800 bg-opacity-80 px-3 text-gray-200 hover:bg-slate-600"
+							tabindex="-1"
+					>
+						Go
+					</button>
+				</span>
+			</form>
+			<!-- end search -->
 		</div>
 		<vue-datatable ref="vuedatatable"
 					   :api-url="apiUrl"
