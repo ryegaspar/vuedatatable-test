@@ -39,9 +39,27 @@ const fields = [
 				},
 				{
 					birthdate: {
+						detailClass: 'lg:hidden',
+						columnClass: 'hidden lg:table-cell',
+						unknownProperty: 'hidden:sm:table-cell',
+					}
+				},
+				{
+					'__component:Status': {
+						detailClass: 'md:hidden',
+						columnClass: 'hidden md:table-cell',
+					}
+				},
+				{
+					'created_at': {
+						detailClass: 'sm:hidden',
+						columnClass: 'hidden sm:table-cell'
+					}
+				},
+				{
+					'__slot:actions': {
 						detailClass: 'sm:hidden',
 						columnClass: 'hidden sm:table-cell',
-						unknownProperty: 'hidden:sm:table-cell',
 					}
 				},
 				{ fieldDoesNotExists: {} }
@@ -65,7 +83,7 @@ const fields = [
 		name: 'birthdate',
 		title: 'Birthdate',
 		titleClass: 'text-right',
-		dataClass: 'text-xs font-bold text-left sm:text-right',
+		dataClass: 'text-xs font-bold text-left lg:text-right',
 		callback: function (value) {
 			return format(new Date(value), 'MMM dd yyyy')
 		}
@@ -176,7 +194,7 @@ function search() {
 		<li>override tableHeaderClass</li>
 		<li>custom dataclass (birthdate)</li>
 	</ol>
-	<div class="min-w-full py-2 align-middle sm:px-6 lg:px-8">
+	<div class="min-w-full py-2 align-middle">
 		<div class="flex items-center">
 			<!-- per page -->
 			<Listbox v-model="selectedPerPage">
@@ -302,6 +320,7 @@ function search() {
 					   :sortOrder="sortOrder"
 					   :perPage="selectedPerPage"
 					   :appendParams="appendParams"
+					   :options="{ httpOptions: {withCredentials: true,}}"
 		>
 			<template #actions="{rowData}">
 				<div class="flex flex-col space-y-0.5 lg:flex-row lg:justify-center lg:space-y-0">
