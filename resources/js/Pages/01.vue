@@ -17,10 +17,36 @@ const fields = [
 	{
 		name: 'id',
 		title: 'ID',
+		dataClass: 'hidden xl:table-cell',
+		titleClass: 'hidden xl:table-cell'
 	},
 	{
 		name: 'name',
-		title: 'Name',
+		title: 'Names',
+		details: {
+			detailFields: [
+				{
+					email: {
+						detailClass: 'xl:hidden',
+						columnClass: 'hidden xl:table-cell'
+					}
+				},
+				{
+					nickname: {
+						detailClass: 'xl:hidden',
+						columnClass: 'hidden xl:table-cell'
+					}
+				},
+				{
+					birthdate: {
+						detailClass: 'sm:hidden',
+						columnClass: 'hidden sm:table-cell',
+						unknownProperty: 'hidden:sm:table-cell',
+					}
+				},
+				{ fieldDoesNotExists: {} }
+			],
+		}
 	},
 	{
 		name: 'email',
@@ -39,7 +65,7 @@ const fields = [
 		name: 'birthdate',
 		title: 'Birthdate',
 		titleClass: 'text-right',
-		dataClass: 'text-xs font-bold text-right',
+		dataClass: 'text-xs font-bold text-left sm:text-right',
 		callback: function (value) {
 			return format(new Date(value), 'MMM dd yyyy')
 		}
@@ -63,13 +89,6 @@ const fields2 = [
 	{
 		name: 'name',
 		title: 'Name',
-		dlClass: 'lg:hidden',
-		dlFields: [
-			'nickname', 'birthdate'
-		],
-		dlFieldsClass: [
-			'lg:hidden', 'sm:hidden'
-		]
 	},
 	{
 		name: 'email',
@@ -78,7 +97,6 @@ const fields2 = [
 	{
 		name: 'nickname',
 		title: 'Nickname',
-		dataClass: 'hidden lg:table-cell'
 	},
 	{
 		name: 'birthdate',
@@ -286,13 +304,13 @@ function search() {
 					   :appendParams="appendParams"
 		>
 			<template #actions="{rowData}">
-				<div>
+				<div class="flex flex-col space-y-0.5 lg:flex-row lg:justify-center lg:space-y-0">
 					<button class="rounded-md bg-blue-400 p-1.5 text-gray-900 hover:bg-blue-500 focus:outline-none"
 							@click.prevent="edit(rowData)"
 					>
 						Edit
 					</button>
-					<button class="ml-2 rounded-md bg-red-400 p-1.5 text-gray-900 hover:bg-red-500 focus:outline-none"
+					<button class="rounded-md bg-red-400 p-1 text-gray-900 hover:bg-red-500 focus:outline-none lg:ml-2 lg:p-1.5"
 							@click.prevent="deleteUser(rowData)"
 					>
 						Delete

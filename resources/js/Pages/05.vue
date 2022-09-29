@@ -87,7 +87,7 @@ const defaultCss = {
 						Book
 					</th>
 					<!-- *tableHeaderCellClass -->
-					<th class="hidden px-4 py-3.5 uppercase sm:table-cell">
+					<th class="hidden px-4 py-3.5 uppercase lg:table-cell">
 						Birthdate
 					</th>
 					<th class="px-4 py-3.5 uppercase">
@@ -96,7 +96,7 @@ const defaultCss = {
 				</tr>
 				</thead>
 				<tbody class="text-gray-800"><!-- tableBodyClass -->
-				<tr class="bg-gray-50 even:bg-slate-300"><!-- tableRowClass -->
+				<tr class="relative bg-gray-50 even:bg-slate-300"><!-- tableRowClass -->
 					<td class="hidden p-3 align-top text-sm lg:table-cell"><!-- tableDataClass (p-3 text-sm align-top)-->
 						1
 					</td>
@@ -105,8 +105,8 @@ const defaultCss = {
 						<dl class="lg:hidden">
 							<dt class="sr-only">Nickname</dt>
 							<dd>Kacey</dd>
-							<dt class="sr-only sm:hidden">Birthdate</dt>
-							<dd class="sm:hidden">2013-05-20</dd>
+							<dt class="sr-only">Birthdate</dt>
+							<dd>2013-05-20</dd>
 						</dl>
 					</td>
 					<td class="p-2"><!-- tableDataClass -->
@@ -128,15 +128,15 @@ const defaultCss = {
 					<td class="p-2"><!-- *tableDataClass -->
 						Harry Potter and the prisoner of Azkhaban
 					</td>
-					<td class="hidden p-2 sm:table-cell"><!-- *tableDataClass -->
+					<td class="hidden p-2 lg:table-cell"><!-- *tableDataClass -->
 						2013-05-20
 					</td>
 					<td class="p-2">
-						<div>
+						<div class="flex flex-col space-y-0.5 lg:flex-row lg:space-y-0">
 							<button class="rounded-md bg-blue-400 p-1.5 text-gray-900 hover:bg-blue-500 focus:outline-none">
 								Edit
 							</button>
-							<button class="ml-2 rounded-md bg-red-400 p-1.5 text-gray-900 hover:bg-red-500 focus:outline-none">
+							<button class="rounded-md bg-red-400 p-1.5 text-gray-900 hover:bg-red-500 focus:outline-none lg:ml-2">
 								Delete
 							</button>
 						</div>
@@ -151,8 +151,8 @@ const defaultCss = {
 						<dl class="lg:hidden">
 							<dt class="sr-only">Nickname</dt>
 							<dd>Metcha</dd>
-							<dt class="sr-only sm:hidden">Birthdate</dt>
-							<dd class="sm:hidden">2007-05-20</dd>
+							<dt class="sr-only">Birthdate</dt>
+							<dd>2007-05-20</dd>
 						</dl>
 					</td>
 					<td class="p-2"><!-- tableDataClass -->
@@ -174,15 +174,15 @@ const defaultCss = {
 					<td class="p-2"><!-- *tableDataClass -->
 						Lord of the Rings: Fellowship of the Ring
 					</td>
-					<td class="hidden p-2 sm:table-cell"><!-- *tableDataClass -->
+					<td class="hidden p-2 lg:table-cell"><!-- *tableDataClass -->
 						2007-05-20
 					</td>
 					<td class="p-2">
-						<div>
+						<div class="flex flex-col space-y-0.5 lg:flex-row lg:space-y-0">
 							<button class="rounded-md bg-blue-400 p-1.5 text-gray-900 hover:bg-blue-500 focus:outline-none">
 								Edit
 							</button>
-							<button class="ml-2 rounded-md bg-red-400 p-1.5 text-gray-900 hover:bg-red-500 focus:outline-none">
+							<button class="rounded-md bg-red-400 p-1.5 text-gray-900 hover:bg-red-500 focus:outline-none lg:ml-2">
 								Delete
 							</button>
 						</div>
@@ -197,8 +197,8 @@ const defaultCss = {
 						<dl class="lg:hidden">
 							<dt class="sr-only">Nickname</dt>
 							<dd>Gene</dd>
-							<dt class="sr-only sm:hidden">Birthdate</dt>
-							<dd class="sm:hidden">2005-08-31</dd>
+							<dt class="sr-only">Birthdate</dt>
+							<dd>2005-08-31</dd>
 						</dl>
 					</td>
 					<td class="p-2"><!-- tableDataClass -->
@@ -220,15 +220,15 @@ const defaultCss = {
 					<td class="p-2"><!-- *tableDataClass -->
 						The Hobbit: Desolation of Smaug
 					</td>
-					<td class="hidden p-2 sm:table-cell"><!-- *tableDataClass -->
+					<td class="hidden p-2 lg:table-cell"><!-- *tableDataClass -->
 						2005-08-31
 					</td>
 					<td class="p-2">
-						<div>
+						<div class="flex flex-col space-y-0.5 lg:flex-row lg:space-y-0">
 							<button class="rounded-md bg-blue-400 p-1.5 text-gray-900 hover:bg-blue-500 focus:outline-none">
 								Edit
 							</button>
-							<button class="ml-2 rounded-md bg-red-400 p-1.5 text-gray-900 hover:bg-red-500 focus:outline-none">
+							<button class="rounded-md bg-red-400 p-1.5 text-gray-900 hover:bg-red-500 focus:outline-none lg:ml-2">
 								Delete
 							</button>
 						</div>
