@@ -25,6 +25,10 @@ let pages = [
 	{
 		link: '06',
 		title: 'experimental'
+	},
+	{
+		link: '07',
+		title: 'Others'
 	}
 ]
 
