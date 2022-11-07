@@ -18,7 +18,9 @@ const fields = [
 		name: 'id',
 		title: 'ID',
 		dataClass: 'hidden xl:table-cell',
-		titleClass: 'hidden xl:table-cell'
+		titleClass: 'hidden xl:table-cell',
+		sortField: 'id',
+		titleSortClass: 'ml-2 inline-block align-middle'
 	},
 	{
 		name: 'name',
