@@ -87,7 +87,9 @@ const fields = [
 		titleClass: 'text-right',
 		dataClass: 'text-xs font-bold text-left lg:text-right',
 		callback: function (value) {
-			return format(new Date(value), 'MMM dd yyyy')
+			return `<span class="lg:bg-green-500 lg:px-2 lg:py-1 lg:rounded-lg">` +
+				format(new Date(value), 'MMM dd yyyy') +
+				`</span>`
 		}
 	},
 	{
