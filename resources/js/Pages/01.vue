@@ -170,12 +170,19 @@ watch(selectedStatus, (newVal, oldVal) => {
 	nextTick(() => vuedatatable.value.refresh())
 })
 
-function edit(rowData) {
-	alert(rowData.name)
+function edit(rowData, rowIndex) {
+	vuedatatable.value.modifyData({
+		id: 1001,
+		name: 'Pamela James',
+		email: 'mel@fuma.com',
+		nickname: 'gangi',
+		status: 0,
+		birthdate: '1978-11-22'
+	}, rowIndex)
 }
 
-function deleteUser( rowData ) {
-	alert(rowData.nickname)
+function deleteUser(rowIndex ) {
+	vuedatatable.value.removeData(rowIndex)
 }
 
 function search() {
@@ -186,6 +193,17 @@ function search() {
 	}
 
 	vuedatatable.value.refresh()
+}
+
+function insertData() {
+	vuedatatable.value.insertData({
+		id: 1000,
+		name: 'Rick Mortis',
+		email: 'samson@morti.com',
+		nickname: 'samwise',
+		status: 1,
+		birthdate: '1982-11-22'
+	})
 }
 </script>
 
@@ -316,6 +334,11 @@ function search() {
 				</span>
 			</form>
 			<!-- end search -->
+			<button class="w-full rounded bg-amber-500 p-2 hover:bg-amber-600 lg:w-28"
+					@click.prevent="insertData"
+			>
+				create
+			</button>
 		</div>
 		<vue-datatable ref="vuedatatable"
 					   :api-url="apiUrl"
@@ -326,15 +349,15 @@ function search() {
 					   :appendParams="appendParams"
 					   :options="{ httpOptions: {withCredentials: true,}}"
 		>
-			<template #actions="{rowData}">
+			<template #actions="{rowData, rowIndex}">
 				<div class="flex flex-col space-y-0.5 lg:flex-row lg:justify-center lg:space-y-0">
 					<button class="rounded-md bg-blue-400 p-1.5 text-gray-900 hover:bg-blue-500 focus:outline-none"
-							@click.prevent="edit(rowData)"
+							@click.prevent="edit(rowData, rowIndex)"
 					>
 						Edit
 					</button>
 					<button class="rounded-md bg-red-400 p-1 text-gray-900 hover:bg-red-500 focus:outline-none lg:ml-2 lg:p-1.5"
-							@click.prevent="deleteUser(rowData)"
+							@click.prevent="deleteUser(rowIndex)"
 					>
 						Delete
 					</button>
